@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300;
+    background-image: 
+      radial-gradient(circle at 2px 2px, rgba(14, 165, 233, 0.05) 1px, transparent 0);
+    background-size: 60px 60px;
+  }
+
+  .dark body {
+    background-image: 
+      radial-gradient(circle at 2px 2px, rgba(56, 189, 248, 0.08) 1px, transparent 0);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Tech Grid Background */
+  .tech-grid {
+    background-image: 
+      linear-gradient(rgba(14, 165, 233, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(14, 165, 233, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .dark .tech-grid {
+    background-image: 
+      linear-gradient(rgba(56, 189, 248, 0.15) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(56, 189, 248, 0.15) 1px, transparent 1px);
+  }
+
+  /* Code Pattern Background */
+  .code-pattern {
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(14, 165, 233, 0.03) 2px,
+        rgba(14, 165, 233, 0.03) 4px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 2px,
+        rgba(14, 165, 233, 0.03) 2px,
+        rgba(14, 165, 233, 0.03) 4px
+      );
+    background-size: 20px 20px;
+  }
+
+  .dark .code-pattern {
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(56, 189, 248, 0.08) 2px,
+        rgba(56, 189, 248, 0.08) 4px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 2px,
+        rgba(56, 189, 248, 0.08) 2px,
+        rgba(56, 189, 248, 0.08) 4px
+      );
+  }
+
+  /* Circuit Pattern Background */
+  .circuit-pattern {
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(14, 165, 233, 0.15) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+
+  .dark .circuit-pattern {
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(56, 189, 248, 0.2) 1px, transparent 0);
+  }
+
+  /* Animated Tech Lines */
+  @keyframes tech-line {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  .tech-line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(14, 165, 233, 0.5),
+      transparent
+    );
+    animation: tech-line 8s infinite;
+  }
+
+  .dark .tech-line {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(56, 189, 248, 0.6),
+      transparent
+    );
+  }
+}
+
